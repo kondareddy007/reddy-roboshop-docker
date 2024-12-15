@@ -9,3 +9,10 @@ COPY package.json /opt/server/
 COPY server.js /opt/server/
 RUN npm install
 CMD ["node", "server.js"]
+
+
+
+#docker build -t catalogue:1 .
+#docker run -d mongodb:1
+#docker logs 59fd45eab65d
+#

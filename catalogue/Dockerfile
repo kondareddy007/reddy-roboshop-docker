@@ -29,4 +29,13 @@ CMD ["node", "server.js"]
 ##docker ps
 ##docker inspect <contaner id> --> catalogue ip "172.18.0.3"
 #docker logs catalogue --> msg: mongodb connected
-#
+
+#docker containers can not communicate each other through they use docker default n/w.
+#docker build -t mongodb:1 .
+#docker run -d mongodb:1
+#docker logs 59fd45eab65d
+#docker inspect 59fd45eab65d
+#docker network create roboshop
+#docker run -d --name mongodb --network=roboshop mongodb:1
+#docker run -d --name catalogue --network=roboshop catalogue:1
+#docker run -d -p 80:80 --name web --network=roboshop web:1

@@ -1,6 +1,8 @@
 FROM nginx
 RUN rm -rf /usr/share/nginx/html/index.html
-COPY roboshop.conf /etc/nginx/default.d/roboshop.conf
+RUN rm -rf /etc/nginx/nginx.conf
+RUN rm -rf /etc/nginx/conf.d/default.conf
+COPY roboshop.conf /etc/nginx/nginx.conf
 ADD static /usr/share/nginx/html/index.html
 
 
@@ -34,3 +36,9 @@ ADD static /usr/share/nginx/html/index.html
 #docker run -d --name mongodb --network=roboshop mongodb:1
 #docker run -d --name catalogue --network=roboshop catalogue:1
 #docker run -d -p 80:80 --name web --network=roboshop web:1
+
+#404 error catalogue is not displayes. So troubleshoot the issue
+#docker exec -it <web ID> 
+#curl localhost/api/catalogue/health
+# cd /etc/nginx
+# cat nginx.conf

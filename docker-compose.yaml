@@ -17,6 +17,6 @@ services:
   web:
     image: web:1
     ports:
-      -"80:80"
+      - "80:80"
     depends_on:
       - catalogue

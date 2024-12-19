@@ -3,7 +3,7 @@
 #
 FROM maven AS build
 
-RUN apt-get update && apt-get -y install maven
+# RUN apt-get update && apt-get -y install maven
 
 WORKDIR /opt/shipping
 

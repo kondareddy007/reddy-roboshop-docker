@@ -21,6 +21,21 @@ services:
     depends_on:
       - catalogue
 
+  redis:
+    image: redis
+
+  user:
+    image: user:1
+    depends_on:
+    - redis
+    - mongodb
+
+  cart:
+    image: cart:1
+    depends_on:
+    - redis
+    - catalogue 
+
 
   #docker compose up -d
   #docker compose down

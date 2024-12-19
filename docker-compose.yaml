@@ -43,7 +43,7 @@ services:
     - catalogue 
 
   mysql:
-     image: mysql:1
+     image: mysql
      container_name: mysql
 
   shipping:

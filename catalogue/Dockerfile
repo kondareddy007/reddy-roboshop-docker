@@ -1,4 +1,5 @@
 FROM node:18
+RUN apk add --no-cache shadow
 EXPOSE 8080
 RUN addgroup -S roboshop && adduser -S roboshop -G roboshop
 WORKDIR /opt/server

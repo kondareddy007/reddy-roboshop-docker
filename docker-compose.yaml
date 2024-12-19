@@ -56,20 +56,21 @@ services:
     depends_on:
       - cart
       - mysql 
-  robbitmq:
-    image: robbitmq
-    container_name: robbitmq
-    environment:
-      - ROBBITMQ_DEFAULT_USER=roboshop
-      - ROBBITMQ_DEFAULT_PASS=roboshop123
 
-  payment:
-    container_name: payment
-    image: payment:1
-    depends_on:
-      - robbitmq
-      - user
-      - cart
+  # robbitmq:
+  #   image: robbitmq
+  #   container_name: robbitmq
+  #   environment:
+  #     - ROBBITMQ_DEFAULT_USER=roboshop
+  #     - ROBBITMQ_DEFAULT_PASS=roboshop123
+
+  # payment:
+  #   container_name: payment
+  #   image: payment:1
+  #   depends_on:
+  #     - robbitmq
+  #     - user
+  #     - cart
 
 
   #docker compose up -d
